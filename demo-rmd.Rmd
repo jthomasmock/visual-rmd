@@ -1,0 +1,210 @@
+---
+title: "Visual R Markdown in R Markdown"
+author: "Thomas Mock"
+date: "9/23/2020"
+output: html_document
+bibliography: references.bib
+editor_options:
+  markdown:
+    wrap: sentence
+    canonical: true
+  chunk_output_type: inline
+---
+
+```{r setup, include=FALSE, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(palmerpenguins)
+```
+
+# Intro {#intro}
+
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------+
+| Platform            | Download                                                                                                                                      | Size   |
++=====================+===============================================================================================================================================+========+
+| Windows 10/8/7      | [RStudio-1.4.861.exe](https://s3.amazonaws.com/rstudio-ide-build/desktop/windows/RStudio-1.4.861.exe "Windows Download")                      | 157M   |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------+
+| MacOS 10.13+        | [RStudio-1.4.861.dmg](https://s3.amazonaws.com/rstudio-ide-build/desktop/macos/RStudio-1.4.861.dmg "Mac Download")                            | 154M   |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------+
+| Ubuntu 18/Debian 10 | [rstudio-1.4.861-amd64.deb](https://s3.amazonaws.com/rstudio-ide-build/desktop/bionic/amd64/rstudio-1.4.861-amd64.deb "Ubuntu Download")      | 115M   |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------+
+| Fedora 28/Red Hat 8 | [rstudio-1.4.861-x86\_64.rpm](https://s3.amazonaws.com/rstudio-ide-build/desktop/centos8/x86_64/rstudio-1.4.861-x86_64.rpm "Fedora Download") | 132M   |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------+
+
+: Table 1 - Links to RStudio 1.4 Preview
+
+### Enabling Visual Mode {#enabling-visual-mode}
+
+Markdown documents can be edited in either source or visual mode.
+To switch into visual mode for a given document, use the ![](images/paste-F6E84BB0.png){width="13" height="12"} button at the top-right of the document toolbar (or alternatively the `⌘+⇧+F12` keyboard shortcut):
+
+![](https://rstudio.github.io/visual-markdown-editing/images/visual-editing.png){width="450"}
+
++--------------+-------------------+-------------------+
+| Command      | Keyboard Shortcut | Markdown Shortcut |
++:=============+===================+:==================+
+| Bold         | `⌘ B`             | `**bold**`        |
++--------------+-------------------+-------------------+
+| Italic       | `⌘ I`             | `*italic*`        |
++--------------+-------------------+-------------------+
+| Code         | `⌘ D`             | `` `code` ``      |
++--------------+-------------------+-------------------+
+| Link         | `⌘ K`             | `<href>`          |
++--------------+-------------------+-------------------+
+| Heading 1    | `⌥⌘ 1`            | `#`               |
++--------------+-------------------+-------------------+
+| Heading 2    | `⌥⌘ 2`            | `##`              |
++--------------+-------------------+-------------------+
+| Heading 3    | `⌥⌘ 3`            | `###`             |
++--------------+-------------------+-------------------+
+| R Code Chunk | `⌥⌘ I`            | ```` ```{r} ````  |
++--------------+-------------------+-------------------+
+
+### Insert Anything {#insert-anything}
+
+You can also use the catch-all `⌘/` shortcut to insert just about anything.
+Just execute the shortcut then type what you want to insert.
+For example:
+
+Use the `bullet`
+
+-   Output
+
+Or `numbered`
+
+1.  Number list!
+
+Here's a link - how to turn into an image?
+Here's a link: `https://rstudio.github.io/visual-markdown-editing/images/visual-editing-omni-list.png`
+
+### DEMO of the ⌘ {#demo-of-the-⌘ style="color: red;"}
+
+### Editor Toolbar {#editor-toolbar}
+
+The editor toolbar includes buttons for the most commonly used formatting commands:
+
+![](https://rstudio.github.io/visual-markdown-editing/images/visual-editing-toolbar.png)
+
+Additional commands are available on the **Format**, **Insert**, and **Table** menus:
+
+::: {style="display: flex;"}
+<div>
+
+### Format
+
+![](https://rstudio.github.io/visual-markdown-editing/images/visual-editing-format-menu.png)
+
+</div>
+
+<div>
+
+### Insert
+
+![](https://rstudio.github.io/visual-markdown-editing/images/visual-editing-insert-menu.png)
+
+</div>
+
+<div>
+
+### Table
+
+![](https://rstudio.github.io/visual-markdown-editing/images/visual-editing-table-menu.png)
+
+</div>
+:::
+
+# Technical Writing {#technical-writing}
+
+## Equations {#equations}
+
+LaTeX equations are authored using standard Pandoc markdown syntax (the editor will automatically recognize the syntax and treat the equation as math).
+When you aren't directly editing an equation it will appear as rendered math:
+
+$$
+P(E) = {n \choose k} p^k (2-p)^{n-k}
+$$
+
+![](https://rstudio.github.io/visual-markdown-editing/images/visual-editing-math.png)
+
+### Footnotes {#footnotes}
+
+------------------------------------------------------------------------
+
+You can include footnotes using the **Insert -\> Footnote** command (or the `⇧ ⌘ F7` keyboard shortcut).
+Footnote editing occurs in a pane immediately below the main document:[^1] \<- **NOTE THE FOOTMARK**
+
+[^1]: Very fancy footnote to this portion
+
+![](https://rstudio.github.io/visual-markdown-editing/images/visual-editing-footnote.png)
+
+# Bibliographies {#bibliographies}
+
+R Markdown supports bibliographies in a wide variety of formats including BibTeX and CSL.
+Add a bibliography to your document using the `bibliography` YAML metadata field.
+For example:
+
+    ---
+    title: "My Document"
+    bibliography: references.bib
+    link-citations: true
+    ---
+
+## Inserting Citations {#inserting-citations}
+
+You insert citations by either using the **Insert -\> Citation** command or by using markdown syntax directly (e.g. `[@cite]`).
+
+Citations go inside square brackets and are separated by semicolons.
+Each citation must have a key, composed of '\@' + the citation identifier from the database, and may optionally have a prefix, a locator, and a suffix.
+The citation key must begin with a letter, digit, or `_`, and may contain alphanumerics, `_`, and internal punctuation characters (`:.#$%&-+?<>~/`).
+Here are some examples:
+
+![](https://rstudio.github.io/visual-markdown-editing/images/visual-editing-citations-inline.png)
+
+[@rottman-sagebiel2018]
+
+#### **DEMO OF CITATION WITH INSERT** {#demo-of-citation-with-insert style="color: red;"}
+
+## Embedded Code {#embedded-code}
+
+Source code which you include in an R Markdown document can either by for display only or can be executed by knitr as part of rendering.
+Code can furthermore be either inline or block (e.g. an Rmd code chunk).
+
+### Displaying Code {#displaying-code}
+
+To display but not execute code, either use the **Insert -\> Code Block** menu item, or start a new line and type either:
+
+1.  ```` ``` ```` (for a plain code block); or
+
+2.  ```` ```<lang> ```` (where \<lang\> is a language) for a code block with syntax highlighting.
+
+Then press the **Enter** key.
+To display code inline, simply surround text with backticks (`` `code` ``), or use the **Format -\> Code** menu item.
+
+    library(tidyverse)
+    library(palmerpenguins)
+
+    penguins %>% 
+      ggplot(aes(x = body_weight_g, y = flipper_length_mm, color = species)) +
+      geom_point()
+
+### Code Chunks {#code-chunks}
+
+To insert an executable code chunk, use the **Insert -\> Code Chunk** menu item, or start a new line and type:
+
+```` ```{r} ````
+
+Then press the **Enter** key.
+Note that `r` could be another language supported by knitr (e.g. `python` or `sql`) and you can also include a chunk label and other chunk options.
+
+To include inline R code, you just create normal inline code (e.g. by using backticks or the ⌘ D shortcut) but preface it with `r`.
+For example, this inline code will be executed by knitr: `` `r Sys.Date()` ``.
+Note that when the code displays in visual mode it won't have the backticks (but they will still appear in source mode).
+
+```{r penguins-plot, message=FALSE}
+penguins %>% 
+  na.omit() %>% 
+  ggplot(aes(x = body_mass_g, y = flipper_length_mm)) +
+  geom_point(aes(color = species)) +
+  labs(title = "Important Penguins") +
+  geom_smooth(method = "lm", color = "black")
+```
