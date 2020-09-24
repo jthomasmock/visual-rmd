@@ -19,17 +19,17 @@ library(palmerpenguins)
 
 # Intro {#intro}
 
-+---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------+
-| Platform            | Download                                                                                                                                      | Size   |
-+=====================+===============================================================================================================================================+========+
-| Windows 10/8/7      | [RStudio-1.4.861.exe](https://s3.amazonaws.com/rstudio-ide-build/desktop/windows/RStudio-1.4.861.exe "Windows Download")                      | 157M   |
-+---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------+
-| MacOS 10.13+        | [RStudio-1.4.861.dmg](https://s3.amazonaws.com/rstudio-ide-build/desktop/macos/RStudio-1.4.861.dmg "Mac Download")                            | 154M   |
-+---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------+
-| Ubuntu 18/Debian 10 | [rstudio-1.4.861-amd64.deb](https://s3.amazonaws.com/rstudio-ide-build/desktop/bionic/amd64/rstudio-1.4.861-amd64.deb "Ubuntu Download")      | 115M   |
-+---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------+
-| Fedora 28/Red Hat 8 | [rstudio-1.4.861-x86\_64.rpm](https://s3.amazonaws.com/rstudio-ide-build/desktop/centos8/x86_64/rstudio-1.4.861-x86_64.rpm "Fedora Download") | 132M   |
-+---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------+
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+| Platform            | Download                                                                                                                                      | Size      |
++=====================+===============================================================================================================================================+===========+
+| Windows 10/8/7      | [RStudio-1.4.861.exe](https://s3.amazonaws.com/rstudio-ide-build/desktop/windows/RStudio-1.4.861.exe "Windows Download")                      | 157M      |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+| MacOS 10.13+        | [RStudio-1.4.861.dmg](https://s3.amazonaws.com/rstudio-ide-build/desktop/macos/RStudio-1.4.861.dmg "Mac Download")                            | 154M      |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+| Ubuntu 18/Debian 10 | [rstudio-1.4.861-amd64.deb](https://s3.amazonaws.com/rstudio-ide-build/desktop/bionic/amd64/rstudio-1.4.861-amd64.deb "Ubuntu Download")      | 115M      |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+| Fedora 28/Red Hat 8 | [rstudio-1.4.861-x86\_64.rpm](https://s3.amazonaws.com/rstudio-ide-build/desktop/centos8/x86_64/rstudio-1.4.861-x86_64.rpm "Fedora Download") | 132M      |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 
 : Table 1 - Links to RStudio 1.4 Preview
 
@@ -79,7 +79,7 @@ Or `numbered`
 Here's a link - how to turn into an image?
 Here's a link: `https://rstudio.github.io/visual-markdown-editing/images/visual-editing-omni-list.png`
 
-### DEMO of the ⌘ {#demo-of-the-⌘ style="color: red;"}
+### DEMO of the ⌘ {\#demo-of-the-⌘ style="color: red;"}
 
 ### Editor Toolbar {#editor-toolbar}
 
@@ -209,4 +209,25 @@ penguins %>%
   geom_point(aes(color = species)) +
   labs(title = "Important Penguins") +
   geom_smooth(method = "lm", color = "black")
+```
+
+### Tables {#tables}
+
+```{r}
+library(gt)
+
+penguins %>% 
+  na.omit() %>% 
+  select(species, bill_length_mm, body_mass_g) %>% 
+  head() %>% 
+  gt()
+```
+
+```{r}
+library(reactable)
+penguins %>% 
+  filter(species == "Adelie") %>% 
+  na.omit() %>% 
+  select(species, bill_length_mm, body_mass_g) %>% 
+  reactable(defaultPageSize = 5)
 ```
