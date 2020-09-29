@@ -262,6 +262,7 @@ Bookdown recognizes level 1 headers written with a (PART) prefix as book parts.
 ## flexdashboard {#flexdashboard}
 
 Dashboards created with [`flexdashboard`](https://rmarkdown.rstudio.com/flexdashboard/ "flexdashboard") can now be edited in Visual mode.
+
 The `flexdashboard` package uses R Markdown to create and edit interactive dashboards.
 This update is quite helpful for visualizing dashboard layouts and components.
 
