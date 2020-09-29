@@ -1,0 +1,27 @@
+---
+title: "Visual R Markdown in flexdashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+```
+
+## Column {data-width="650"}
+
+### Format text using the **Format** dropdown:
+
+![](images/formattext.png){width="400"}
+
+## Column {data-width="350"}
+
+### Insert **Images** using the Image dropdown:
+
+![](images/insertimg.png)
+
+### Edit tables using the **Table** dropdown:
+
+![](images/inserttable.png)
