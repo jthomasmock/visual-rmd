@@ -26,17 +26,17 @@ margin-bottom: 5px;
 
 # Intro {#intro}
 
-+---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+---------+
-| Platform            | Download                                                                                                                                      | Size    |
-+=====================+===============================================================================================================================================+=========+
-| Windows 10/8/7      | [RStudio-1.4.861.exe](https://s3.amazonaws.com/rstudio-ide-build/desktop/windows/RStudio-1.4.861.exe "Windows Download")                      | 157M    |
-+---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+---------+
-| MacOS 10.13+        | [RStudio-1.4.861.dmg](https://s3.amazonaws.com/rstudio-ide-build/desktop/macos/RStudio-1.4.861.dmg "Mac Download")                            | 154M    |
-+---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+---------+
-| Ubuntu 18/Debian 10 | [rstudio-1.4.861-amd64.deb](https://s3.amazonaws.com/rstudio-ide-build/desktop/bionic/amd64/rstudio-1.4.861-amd64.deb "Ubuntu Download")      | 115M    |
-+---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+---------+
-| Fedora 28/Red Hat 8 | [rstudio-1.4.861-x86\_64.rpm](https://s3.amazonaws.com/rstudio-ide-build/desktop/centos8/x86_64/rstudio-1.4.861-x86_64.rpm "Fedora Download") | 132M    |
-+---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+---------+
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+------+
+| Platform            | Download                                                                                                                                      | Size |
++=====================+===============================================================================================================================================+======+
+| Windows 10/8/7      | [RStudio-1.4.861.exe](https://s3.amazonaws.com/rstudio-ide-build/desktop/windows/RStudio-1.4.861.exe "Windows Download")                      | 157M |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+------+
+| MacOS 10.13+        | [RStudio-1.4.861.dmg](https://s3.amazonaws.com/rstudio-ide-build/desktop/macos/RStudio-1.4.861.dmg "Mac Download")                            | 154M |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+------+
+| Ubuntu 18/Debian 10 | [rstudio-1.4.861-amd64.deb](https://s3.amazonaws.com/rstudio-ide-build/desktop/bionic/amd64/rstudio-1.4.861-amd64.deb "Ubuntu Download")      | 115M |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+------+
+| Fedora 28/Red Hat 8 | [rstudio-1.4.861-x86\_64.rpm](https://s3.amazonaws.com/rstudio-ide-build/desktop/centos8/x86_64/rstudio-1.4.861-x86_64.rpm "Fedora Download") | 132M |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+------+
 
 : Table 1 - Links to RStudio 1.4 Preview
 
@@ -250,3 +250,33 @@ penguins %>%
 ```{r}
 plotly::ggplotly(penguin_plot)
 ```
+
+## Bookdown {#bookdown}
+
+Visual mode supports cross-references and Part headers from the [`bookdown`](https://bookdown.org/ "bookdown") package.
+
+Cross-references enable you to easily link to figures, equations, and even arbitrary labels within a document.
+
+Bookdown recognizes level 1 headers written with a (PART) prefix as book parts.
+
+## flexdashboard {#flexdashboard}
+
+Dashboards created with [`flexdashboard`](https://rmarkdown.rstudio.com/flexdashboard/ "flexdashboard") can now be edited in Visual mode.
+
+The `flexdashboard` package uses R Markdown to create and edit interactive dashboards.
+This update is quite helpful for visualizing dashboard layouts and components.
+
+To create a `flexdashboard`, first download the package from CRAN as follows:
+
+```{r, eval=FALSE}
+install.packages("flexdashboard")
+```
+
+Then you'll need to create an R Markdown document with the `flexdashboard::flex_dashboard` output format.
+You can do this from within RStudio using the New R Markdown dialog:
+
+![Create a new R Markdown document with a flexdashboard template](images/newrmd.png "Create a new R Markdown document with a flexdashboard template"){width="600"}
+
+You can then add tables and images as you would in Visual R Markdown.
+
+#### **DEMO OF IMAGES IN FLEXDASHBOARD** {#demo-of-images-in-flexdashboard}
