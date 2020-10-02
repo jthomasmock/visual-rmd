@@ -255,9 +255,12 @@ plotly::ggplotly(penguin_plot)
 
 Visual mode supports cross-references and Part headers from the [`bookdown`](https://bookdown.org/ "bookdown") package.
 
-Cross-references enable you to easily link to figures, equations, and even arbitrary labels within a document.
+Bookdown recognizes level 1 headers written with a (PART) prefix as book sections.
 
-Bookdown recognizes level 1 headers written with a (PART) prefix as book parts.
+Cross-references enable you to easily link to figures, equations, and even arbitrary labels within a document.
+In Visual Markdown, you would write a cross-reference to a figure like this: `@ref(fig:label)` and the search across all cross-references in your project to easily find the right reference ID, as below:
+
+![](images/crossref.png)
 
 ## flexdashboard {#flexdashboard}
 
