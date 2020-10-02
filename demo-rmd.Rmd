@@ -17,30 +17,23 @@ library(tidyverse)
 library(palmerpenguins)
 ```
 
-```{css, echo = FALSE}
-h1 {
-color: blue;
-margin-bottom: 5px;
-}
-```
-
 # Intro {#intro}
 
-+---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+------+
-| Platform            | Download                                                                                                                                      | Size |
-+=====================+===============================================================================================================================================+======+
-| Windows 10/8/7      | [RStudio-1.4.861.exe](https://s3.amazonaws.com/rstudio-ide-build/desktop/windows/RStudio-1.4.861.exe "Windows Download")                      | 157M |
-+---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+------+
-| MacOS 10.13+        | [RStudio-1.4.861.dmg](https://s3.amazonaws.com/rstudio-ide-build/desktop/macos/RStudio-1.4.861.dmg "Mac Download")                            | 154M |
-+---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+------+
-| Ubuntu 18/Debian 10 | [rstudio-1.4.861-amd64.deb](https://s3.amazonaws.com/rstudio-ide-build/desktop/bionic/amd64/rstudio-1.4.861-amd64.deb "Ubuntu Download")      | 115M |
-+---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+------+
-| Fedora 28/Red Hat 8 | [rstudio-1.4.861-x86\_64.rpm](https://s3.amazonaws.com/rstudio-ide-build/desktop/centos8/x86_64/rstudio-1.4.861-x86_64.rpm "Fedora Download") | 132M |
-+---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+------+
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+---------+
+| Platform            | Download                                                                                                                                      | Size    |
++=====================+===============================================================================================================================================+=========+
+| Windows 10/8/7      | [RStudio-1.4.894.exe](https://s3.amazonaws.com/rstudio-ide-build/desktop/windows/RStudio-1.4.894.exe "Windows Download")                      | 157M    |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+---------+
+| MacOS 10.13+        | [RStudio-1.4.895.dmg](https://s3.amazonaws.com/rstudio-ide-build/desktop/macos/RStudio-1.4.895.dmg "Mac Download")                            | 154M    |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+---------+
+| Ubuntu 18/Debian 10 | [rstudio-1.4.895-amd64.deb](https://s3.amazonaws.com/rstudio-ide-build/desktop/bionic/amd64/rstudio-1.4.895-amd64.deb "Ubuntu Download")      | 115M    |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+---------+
+| Fedora 28/Red Hat 8 | [rstudio-1.4.895-x86\_64.rpm](https://s3.amazonaws.com/rstudio-ide-build/desktop/centos8/x86_64/rstudio-1.4.895-x86_64.rpm "Fedora Download") | 132M    |
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 : Table 1 - Links to RStudio 1.4 Preview
 
-[Full guide](https://rstudio.github.io/visual-markdown-editing/#/)
+[Full guide](https://rstudio.github.io/visual-markdown-editing/#/) - this is the long-form, official guide from the RStudio dev team that covers all the major topics and sub topics of the new features.
 
 ### Enabling Visual Mode {#enabling-visual-mode}
 
@@ -68,6 +61,10 @@ To switch into visual mode for a given document, use the ![](images/paste-F6E84B
 +--------------+-------------------+-------------------+
 | R Code Chunk | `⌥⌘ I`            | ```` ```{r} ````  |
 +--------------+-------------------+-------------------+
+
+### YAML/Editor Options
+
+Please see long section of the [guide](https://rstudio.github.io/visual-markdown-editing/#/options).
 
 ### Insert Anything {#insert-anything}
 
@@ -146,6 +143,43 @@ Footnote editing occurs in a pane immediately below the main document:[^1] \<- *
 
 ![](https://rstudio.github.io/visual-markdown-editing/images/visual-editing-footnote.png)
 
+# Content Editing {#content-editing}
+
+### Comments {#comments}
+
+When reviewing an R Markdown document you often want to provide inline comments with suggested revisions.
+This is possible in R Markdown using HTML comments (which are ignored by all output formats).
+Visual mode includes a command for inserting HTML comments as well as special highlighting treatment to easily parse out editing comments from surrounding text.
+
+<!--# DEMO INSERTING A COMMENT -->
+
+<!--# Note that RStudio 1.3 added real time spell check -->
+
+### Tables {#tables}
+
+You can insert table using the **Table** menu.
+You can then use either the main menu or a context menu to insert and delete table rows and columns:
+
+![](https://rstudio.github.io/visual-markdown-editing/images/visual-editing-table-context.png)
+
+### Lists {#lists}
+
+you can create a new list by just typing `-` or `1.` at the beginning of an empty paragraph.
+To add items to the list, just press **Enter** within a list item.
+To exit the list, press **Enter** within an empty list item.
+
++--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| **Empty Item** (*enter to exit list*)                                                      | **Tab** (*add sublist*)                                                                       | **Backspace** (*add block*)                                                                 |
++:===========================================================================================+:==============================================================================================+:============================================================================================+
+| ![](https://rstudio.github.io/visual-markdown-editing/images/visual-editing-list-item.png) | ![](https://rstudio.github.io/visual-markdown-editing/images/visual-editing-list-sublist.png) | ![](https://rstudio.github.io/visual-markdown-editing/images/visual-editing-list-block.png) |
++--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+
+### Special Characters {#special-characters}
+
+Can use either `:grinning:` 😀 or `Insert -> Special Characters -> Emoji ...`
+
+Unicode can also be inserted w/ `Insert -> Special Characters -> Unicode ...`
+
 # Bibliographies {#bibliographies}
 
 R Markdown supports bibliographies in a wide variety of formats including BibTeX and CSL.
@@ -220,7 +254,7 @@ penguin_plot <- penguins %>%
 penguin_plot
 ```
 
-### Tables {#tables}
+### Tables
 
 ```{r}
 library(gt)
