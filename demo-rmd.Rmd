@@ -254,7 +254,7 @@ penguin_plot <- penguins %>%
 penguin_plot
 ```
 
-### Tables
+### R generated Tables
 
 ```{r}
 library(gt)
@@ -284,33 +284,3 @@ penguins %>%
 ```{r}
 plotly::ggplotly(penguin_plot)
 ```
-
-## Bookdown {#bookdown}
-
-Visual mode supports cross-references and Part headers from the [`bookdown`](https://bookdown.org/ "bookdown") package.
-
-Cross-references enable you to easily link to figures, equations, and even arbitrary labels within a document.
-
-Bookdown recognizes level 1 headers written with a (PART) prefix as book parts.
-
-## flexdashboard {#flexdashboard}
-
-Dashboards created with [`flexdashboard`](https://rmarkdown.rstudio.com/flexdashboard/ "flexdashboard") can now be edited in Visual mode.
-
-The `flexdashboard` package uses R Markdown to create and edit interactive dashboards.
-This update is quite helpful for visualizing dashboard layouts and components.
-
-To create a `flexdashboard`, first download the package from CRAN as follows:
-
-```{r, eval=FALSE}
-install.packages("flexdashboard")
-```
-
-Then you'll need to create an R Markdown document with the `flexdashboard::flex_dashboard` output format.
-You can do this from within RStudio using the New R Markdown dialog:
-
-![Create a new R Markdown document with a flexdashboard template](images/newrmd.png "Create a new R Markdown document with a flexdashboard template"){width="600"}
-
-You can then add tables and images as you would in Visual R Markdown.
-
-#### **DEMO OF IMAGES IN FLEXDASHBOARD** {#demo-of-images-in-flexdashboard}
