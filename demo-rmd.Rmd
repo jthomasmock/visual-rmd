@@ -23,88 +23,57 @@ RStudio 1.4 adds support for the `Visual Mode` of editing R Markdown!
 This is a [`WYSIWYM`](https://simple.wikipedia.org/wiki/WYSIWYM) editor, meaning:
 
 > **WYSIWYM** is an [acronym](https://simple.wikipedia.org/wiki/Acronym "Acronym") that stands for **What you see is what you mean**.
-> This was positioned to not be confused with [WYSIWYG](https://simple.wikipedia.org/wiki/WYSIWYG "WYSIWYG") (what you see is what you get).
-> The idea behind WYSIWYG is to display text on screen in much the *same* way as they will appear when printed on paper.\
+> This was positioned to not be confused with [WYSIWYG](https://simple.wikipedia.org/wiki/WYSIWYG "WYSIWYG") (**what you see is what you get**).
+> The idea behind WYSIWYG is to display text on screen in much the *exact same* way as they will appear when printed on paper.\
 > \
-> WYSIWYM is different from this:\
-> \
-> The content is structur
-> ed. When the content is entered, this meaning is added to the te
-> xt. This will mean that [presentation](https://simple.wikipedia.org/w/index.php?title=Separation_of_presentation_and_content&action=edit&redlink=1 "Separation of presentation and content (not yet started)") is separated from the conte
-> nt. The content is translated before it is render
-> ed.
->
-> This also means that it can be translated differently, the *same* content can lead to *different* output formats.
-> More importantly though, the person editing the document can focus on the content, and is not easily distracted by what the content looks like.
-> One of the drawbacks of the method is that the user is forced to think ahead.
+> WYSIWYM means that it can be translated differently, (where) the *same* content can lead to *different* output formats
+> .
 
-However, the Visual R Markdown allows for markdown/HTML/latex editing in plain text, and a visual representation of what it will actually look like!
+The Visual R Markdown allows for editing in plain text or visual mode, along with a visual representation of what it will actually look like while maintaining the ability to output to HTML or PDF.
 
-+---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+----------+
-| Platform            | Download                                                                                                                                      | Size     |
-+=====================+===============================================================================================================================================+==========+
-| Windows 10/8/7      | [RStudio-1.4.894.exe](https://s3.amazonaws.com/rstudio-ide-build/desktop/windows/RStudio-1.4.894.exe "Windows Download")                      | 157M     |
-+---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+----------+
-| MacOS 10.13+        | [RStudio-1.4.895.dmg](https://s3.amazonaws.com/rstudio-ide-build/desktop/macos/RStudio-1.4.895.dmg "Mac Download")                            | 154M     |
-+---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+----------+
-| Ubuntu 18/Debian 10 | [rstudio-1.4.895-amd64.deb](https://s3.amazonaws.com/rstudio-ide-build/desktop/bionic/amd64/rstudio-1.4.895-amd64.deb "Ubuntu Download")      | 115M     |
-+---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+----------+
-| Fedora 28/Red Hat 8 | [rstudio-1.4.895-x86\_64.rpm](https://s3.amazonaws.com/rstudio-ide-build/desktop/centos8/x86_64/rstudio-1.4.895-x86_64.rpm "Fedora Download") | 132M     |
-+---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+----------+
++---------------------+--------------------------------------------------------+------+
+| OS                  | Download Version                                       | Size |
++=====================+========================================================+======+
+| Windows 10/8/7      | [RStudio-1.4.894.exe](%3Chttp://bit.ly/win-dl-rs)      | 157M |
++---------------------+--------------------------------------------------------+------+
+| MacOS 10.13+        | [RStudio-1.4.895.dmg](http://bit.ly/mac-dl-rs)         | 154M |
++---------------------+--------------------------------------------------------+------+
+| Ubuntu 18/Debian 10 | [rstudio-1.4.895-amd64.deb](http://bit.ly/ub-dl-rs)    | 115M |
++---------------------+--------------------------------------------------------+------+
+| Fedora 28/RedHat 8  | [rstudio-1.4.895-x86\_64.rpm](http://bit.ly/fed-dl-rs) | 132M |
++---------------------+--------------------------------------------------------+------+
 
-: Table 1 - Links to RStudio 1.4 Preview
+: Table 1 - Links to RStudio 1.4 Preview by Operating System
 
-[Full guide](https://rstudio.github.io/visual-markdown-editing/#/) - this is the long-form, official guide from the RStudio dev team that covers all the major topics and sub topics of the new features.
+[Full guide](https://rstudio.github.io/visual-markdown-editing/#/) guide from the RStudio dev team that covers all the major topics and sub topics of the new features.
 
 ### Enabling Visual Mode {#enabling-visual-mode}
 
-Markdown documents can be edited in either source or visual mode.
-To switch into visual mode for a given document, use the ![](images/paste-F6E84BB0.png){width="13" height="12"} button at the top-right of the document toolbar (or alternatively the `⌘ + ⇧ + F12` keyboard shortcut):
+Markdown documents can be edited in either source or visual m ![](images/paste-F6E84BB0.png){width="13" height="12"} button at the top-right of the document toolbar (or alternatively the `⌘ + ⇧ + F12` keyboard shortcut):
 
 ![](https://rstudio.github.io/visual-markdown-editing/images/visual-editing.png){width="450"}
-
-+--------------+-------------------+-------------------+
-| Command      | Keyboard Shortcut | Markdown Shortcut |
-+:=============+===================+:==================+
-| Bold         | `⌘ B`             | `**bold**`        |
-+--------------+-------------------+-------------------+
-| Italic       | `⌘ I`             | `*italic*`        |
-+--------------+-------------------+-------------------+
-| Code         | `⌘ D`             | `` `code` ``      |
-+--------------+-------------------+-------------------+
-| Link         | `⌘ K`             | `<href>`          |
-+--------------+-------------------+-------------------+
-| Heading 1    | `⌥⌘ 1`            | `#`               |
-+--------------+-------------------+-------------------+
-| Heading 2    | `⌥⌘ 2`            | `##`              |
-+--------------+-------------------+-------------------+
-| Heading 3    | `⌥⌘ 3`            | `###`             |
-+--------------+-------------------+-------------------+
-| R Code Chunk | `⌥⌘ I`            | ```` ```{r} ````  |
-+--------------+-------------------+-------------------+
 
 ### YAML/Editor Options
 
 Please see long section of the [guide](https://rstudio.github.io/visual-markdown-editing/#/options).
 
-### Insert Anything {#insert-anything}
+### Canonical Mode
 
-You can also use the catch-all `⌘/` shortcut to insert just about anything.
-Just execute the shortcut then type what you want to insert.
+If you have a workflow that involves editing in both visual and source mode, you may want to ensure that the same markdown is written no matter which mode edits originate from.
+You can accomplish this using the `canonical` option.
 For example:
 
-Use the `bullet`
-
--   Output
-
-Or `numbered`
-
-1.  Number list!
-
-Here's a link - how to turn into an image?
-Here's a link: `https://rstudio.github.io/visual-markdown-editing/images/visual-editing-omni-list.png`
-
-### DEMO of the ⌘ {#demo-1 .color style="color: red;"}
+``` {.yaml}
+---
+title: "My Document"
+editor_options:
+  markdown:
+    wrap: 72
+    references: 
+      location: block
+    canonical: true
+---
+```
 
 ### Editor Toolbar {#editor-toolbar}
 
@@ -140,7 +109,47 @@ Additional commands are available on the **Format**, **Insert**, and **Table** m
 </div>
 :::
 
-# Technical Writing {#technical-writing}
+### Insert Anything {#insert-anything}
+
++--------------+-------------------+-------------------+
+| Command      | Keyboard Shortcut | Markdown Shortcut |
++:=============+===================+:==================+
+| Bold         | `⌘ B`             | `**bold**`        |
++--------------+-------------------+-------------------+
+| Italic       | `⌘ I`             | `*italic*`        |
++--------------+-------------------+-------------------+
+| Code         | `⌘ D`             | `` `code` ``      |
++--------------+-------------------+-------------------+
+| Link         | `⌘ K`             | `<href>`          |
++--------------+-------------------+-------------------+
+| Heading 1    | `⌥⌘ 1`            | `#`               |
++--------------+-------------------+-------------------+
+| Heading 2    | `⌥⌘ 2`            | `##`              |
++--------------+-------------------+-------------------+
+| Heading 3    | `⌥⌘ 3`            | `###`             |
++--------------+-------------------+-------------------+
+| R Code Chunk | `⌥⌘ I`            | ```` ```{r} ````  |
++--------------+-------------------+-------------------+
+
+You can also use the catch-all `⌘/` shortcut to insert just about anything.
+Just execute the shortcut then type what you want to insert.
+For example:
+
+Use the `bullet`
+
+-   Output
+
+Or `numbered`
+
+1.  Number list!
+
+Here's a link - how to turn into an image?
+
+### DEMO of the ⌘ {#demo-1 .color style="color: red;"}
+
+EXAMPLE LINK: [`https://rstudio.github.io/visual-markdown-editing/images/visual-editing-omni-list.png`](https://rstudio.github.io/visual-markdown-editing/images/visual-editing-omni-list.png)
+
+# Technical Writing
 
 ## Equations {#equations}
 
